@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/misc/color.dart';
 import 'package:travel_app/widgets/button.dart';
 import 'package:travel_app/widgets/display_large_text.dart';
 import 'package:travel_app/widgets/display_text.dart';
@@ -43,6 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top: 120, left: 20, right: 20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,15 +59,34 @@ class _WelcomePageState extends State<WelcomePage> {
                         child: DisplayText(
                           text: desc[index],
                           size: 14,
-                          color: Colors.black54,
+                          color: AppColor.descTextColor,
                         ),
                       ),
                       SizedBox(
                         height: 40,
                       ),
-                      MyButton(),
+                      MyButton(
+                        width: 120,
+                      ),
                     ],
-                  )
+                  ),
+                  Column(
+                    children: List.generate(
+                      3,
+                      (indexDot) {
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 4),
+                          width: 8,
+                          height: index == indexDot ? 25 : 8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: index == indexDot
+                                  ? AppColor.sliderNavColor
+                                  : AppColor.sliderNavColor.withOpacity(0.3)),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
