@@ -5,7 +5,7 @@ class DisplayText extends StatelessWidget {
   final String text;
   final Color color;
 
- DisplayText({super.key, required this.text,  this.color = Colors.black87,this.size=30});
+ DisplayText({super.key, required this.text,  this.color = Colors.black87,this.size=12});
 
   @override
   Widget build(BuildContext context) {
