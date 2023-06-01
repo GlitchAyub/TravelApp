@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/pages/details_page.dart';
 import 'package:travel_app/pages/navPages/bar_item.dart';
 import 'package:travel_app/pages/home_page.dart';
 import 'package:travel_app/pages/navPages/my_page.dart';
@@ -17,6 +18,7 @@ class _MainPageState extends State<MainPage> {
     BarItem(),
     SearchPages(),
     MyPage(),
+  
   ];
   int click = 0;
   void onTap(int index) {
